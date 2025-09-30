@@ -1,1 +1,69 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maneki Neko - Gato de la Suerte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="decorations">
+        <div class="decoration" style="top:10%; left:10%;">💰</div>
+        <div class="decoration" style="top:15%; right:15%;">🎋</div>
+        <div class="decoration" style="bottom:20%; left:15%;">🏮</div>
+        <div class="decoration" style="bottom:10%; right:10%;">⭐</div>
+    </div>
+    
+    <div class="container">
+        <h1 class="title">Maneki Neko</h1>
+        <h2 class="subtitle">El Gato de la Suerte Japonés</h2>
+        
+        <div class="cat-container" id="catContainer">
+            <img src="https://i.pinimg.com/236x/b8/4b/52/b84b52a7a6a033310e8aa406727c9de1.jpg" alt="Maneki Neko Blanco" class="cat-image" id="catImageWhite">
+            <img src="https://i.pinimg.com/474x/dc/b6/c4/dcb6c4dd8b7e83150a775e46aee3f776.jpg" alt="Maneki Neko Negro" class="cat-image" id="catImageBlack">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHg2rf4HcbqRNvWOU7dBRPNiXsrSzdDlFL5iQP-EisUGS7d6Mz9e-j74&s=10" alt="Maneki Neko Azul" class="cat-image" id="catImageBlue">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp6F51RLohIH8btgOpRFMGoeg7IuooBflKh-flug-3zyeFHGmgZe1aGaS9&s=10" alt="Maneki Neko Dorado" class="cat-image" id="catImageGold">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfdoOD-bHopKztv0_FJaJ9SP3YSWECeQlAXw&usqp=CAU" alt="Maneki Neko Rojo" class="cat-image" id="catImageRed">
+            <img src="https://i.pinimg.com/originals/81/6b/cd/816bcd5b983d724e0e6f884bd0308f2a.gif" alt="Maneki Neko Verde" class="cat-image" id="catImageGreen">
+        </div>
+        
+        <div class="color-selector">
+            <div class="color-option active" style="background-color: white; color: transparent;" data-color="white" data-meaning="Blanco: Atrae la felicidad y cosas buenas">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="color-option" style="background-color: black;" data-color="black" data-meaning="Negro: Ahuyenta la mala suerte y atrae la felicidad">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="color-option" style="background-color: #3498db;" data-color="blue" data-meaning="Azul: Ayuda a cumplir los sueños">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="color-option" style="background-color: #ffd700;" data-color="gold" data-meaning="Dorado: Atrae el dinero y la riqueza">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="color-option" style="background-color: #e74c3c;" data-color="red" data-meaning="Rojo: Atrae el éxito en el amor">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="color-option" style="background-color: #2ecc71;" data-color="green" data-meaning="Verde: Atrae la buena salud y la suerte en los estudios">
+                <i class="fas fa-check"></i>
+            </div>
+        </div>
+        
+        <div class="color-info" id="colorInfo" style="background-color: rgba(255, 255, 255, 0.7);">
+            Blanco: Atrae la felicidad y cosas buenas
+        </div>
+        
+        <button class="luck-button" id="luckButton">¡Toca para buena suerte!</button>
+        
+        <div class="fortune-message" id="fortuneMessage">
+            Selecciona un gato y toca para recibir tu mensaje de buena suerte 🐾
+        </div>
+    </div>
+    
+    <footer class="footer">
+        © 2025 Jhorman Jesús Castellanos Morales. Todos los derechos reservados.
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
