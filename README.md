@@ -1,5 +1,8 @@
 # 🐱✨ Maneki Neko – El Gato de la Suerte Japonés
+---
+[![visita la web](https://img.shields.io/badge/Jugar-Ahora!-red?style=for-the-badge&logo=matrix)]([https://jhormancastella.github.io/Red-or-Blue/](https://jhormancastella.github.io/Lucky-Cats/))
 
+---
 Este proyecto es una aplicación web interactiva construida con **HTML5, CSS3 y JavaScript**, que representa al tradicional **Maneki Neko (招き猫)**, conocido como el **"Gato de la Suerte"** en la cultura japonesa.  
 
 La página permite seleccionar diferentes gatos por **color**, mostrar su **significado cultural** y recibir un **mensaje de buena fortuna aleatorio**, acompañado de **animaciones de partículas y decoraciones japonesas**.
