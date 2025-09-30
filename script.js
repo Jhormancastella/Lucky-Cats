@@ -106,6 +106,7 @@ const colorConfig = {
     }
 };
 
+// Obtener elementos del DOM
 const colorOptions = document.querySelectorAll('.color-option');
 const catImageWhite = document.getElementById('catImageWhite');
 const catImageBlack = document.getElementById('catImageBlack');
@@ -128,42 +129,76 @@ catImageGold.style.display = 'none';
 catImageRed.style.display = 'none';
 catImageGreen.style.display = 'none';
 
+// Configurar event listeners para los botones de color
 colorOptions.forEach(option => {
     option.addEventListener('click', function() {
         const color = this.getAttribute('data-color');
         const config = colorConfig[color];
         
+        // Remover clase active de todos los botones
         colorOptions.forEach(opt => opt.classList.remove('active'));
+        // Agregar clase active al botón clickeado
         this.classList.add('active');
         
-        catImageWhite.style.display = color === 'white' ? 'block' : 'none';
-        catImageBlack.style.display = color === 'black' ? 'block' : 'none';
-        catImageBlue.style.display = color === 'blue' ? 'block' : 'none';
-        catImageGold.style.display = color === 'gold' ? 'block' : 'none';
-        catImageRed.style.display = color === 'red' ? 'block' : 'none';
-        catImageGreen.style.display = color === 'green' ? 'block' : 'none';
+        // Ocultar todas las imágenes primero
+        catImageWhite.style.display = 'none';
+        catImageBlack.style.display = 'none';
+        catImageBlue.style.display = 'none';
+        catImageGold.style.display = 'none';
+        catImageRed.style.display = 'none';
+        catImageGreen.style.display = 'none';
         
+        // Mostrar solo la imagen correspondiente al color seleccionado
+        switch(color) {
+            case 'white':
+                catImageWhite.style.display = 'block';
+                break;
+            case 'black':
+                catImageBlack.style.display = 'block';
+                break;
+            case 'blue':
+                catImageBlue.style.display = 'block';
+                break;
+            case 'gold':
+                catImageGold.style.display = 'block';
+                break;
+            case 'red':
+                catImageRed.style.display = 'block';
+                break;
+            case 'green':
+                catImageGreen.style.display = 'block';
+                break;
+        }
+        
+        // Actualizar la información del color
         colorInfo.textContent = config.meaning;
         colorInfo.style.background = config.infoBg;
         colorInfo.style.color = config.textColor || '#5a3921';
         
         currentColor = color;
         
+        // Resetear mensaje de fortuna
         fortuneMessage.textContent = "¡Toca el gato o el botón para recibir tu mensaje de buena suerte!";
         fortuneMessage.style.opacity = '0.7';
     });
 });
 
+// Función para obtener una frase aleatoria
 function getRandomFortune(color) {
     const phrases = fortunePhrases[color];
     return phrases[Math.floor(Math.random() * phrases.length)];
 }
 
+// Event listener para hacer clic en el gato
 catContainer.addEventListener('click', function() {
+    // Efecto de animación al hacer clic
     this.style.transform = 'scale(1.05)';
     setTimeout(() => this.style.transform = 'scale(1)', 200);
+    
+    // Crear partículas de efecto
     createParticles(8);
     
+    // Mostrar mensaje de fortuna
     const phrase = getRandomFortune(currentColor);
     fortuneMessage.textContent = phrase;
     fortuneMessage.style.opacity = '1';
@@ -173,8 +208,12 @@ catContainer.addEventListener('click', function() {
     }, 300);
 });
 
+// Event listener para el botón de buena suerte
 luckButton.addEventListener('click', function() {
+    // Efecto de partículas
     createParticles(15);
+    
+    // Cambiar texto del botón temporalmente
     const original = this.textContent;
     this.textContent = '¡Buena suerte! 🍀';
     this.disabled = true;
@@ -183,6 +222,7 @@ luckButton.addEventListener('click', function() {
         this.disabled = false;
     }, 2000);
     
+    // Mostrar mensaje de fortuna
     const phrase = getRandomFortune(currentColor);
     fortuneMessage.textContent = phrase;
     fortuneMessage.style.opacity = '1';
@@ -192,6 +232,7 @@ luckButton.addEventListener('click', function() {
     }, 300);
 });
 
+// Función para crear partículas de efecto
 function createParticles(count) {
     const symbols = ['🍀', '💰', '⭐', '✨', '🎋'];
     const catRect = catContainer.getBoundingClientRect();
