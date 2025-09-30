@@ -1,1 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffebcd, #ffe0b2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #5a3921;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    border: 6px solid #e67e22;
+    margin: 20px auto;
+}
+
+.cat-container {
+    position: relative;
+    width: 260px;
+    height: 340px;
+    margin: 0 auto 35px;
+    cursor: pointer;
+}
+
+.cat-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.title {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #d35400;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-weight: 800;
+}
+
+.subtitle {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.meaning {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color-selector {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.color-option:hover {
+    transform: scale(1.15);
+}
+
+.color-option.active {
+    border: 2px solid #333;
+    transform: scale(1.15);
+}
+
+.color-info {
+    font-size: 18px;
+    margin-top: 12px;
+    font-weight: bold;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.luck-button {
+    background: linear-gradient(135deg, #e74c3c, #f1c40f);
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.luck-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+}
+
+.luck-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.fortune-message {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    min-height: 60px;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #e67e22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.decoration {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.6;
+    animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@media (max-width: 768px) {
+    .cat-container { 
+        width: 220px; 
+        height: 300px; 
+        margin-bottom: 30px;
+    }
+    .title { font-size: 30px; }
+    .subtitle { font-size: 18px; }
+    .container { padding: 20px 15px; }
+    .fortune-message { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+    .cat-container { 
+        width: 190px; 
+        height: 260px; 
+    }
+    .title { font-size: 26px; }
+    .subtitle { font-size: 16px; }
+    .fortune-message { font-size: 16px; padding: 12px; }
+}
+
+/* Footer styles */
+.footer {
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #7f5539;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 480px) {
+    .footer {
+        font-size: 12px;
+        padding: 12px 10px;
+    }
+}
